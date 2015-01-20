@@ -1,0 +1,182 @@
+/* Changing Susy default global settings */
+@import url(../bower_components/normalize.css);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: #F7FF3F;
+}
+
+::selection {
+  background: #F7FF3F;
+}
+
+body {
+  margin: 10px;
+  background: #FFFDF8;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #000000;
+}
+
+h1, h2, h3, .projects-item-header, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2em;
+}
+
+h2 {
+  font-size: 2.2em;
+  line-height: 1.1em;
+}
+
+h3, .projects-item-header {
+  font-size: 1.7em;
+  line-height: 1em;
+}
+
+p {
+  padding: 0.5em 1em;
+}
+
+blockquote {
+  padding: 0.5em 1em;
+  line-height: 1.4em;
+  font-size: 1.3em;
+}
+
+a {
+  color: #FF5108;
+  text-decoration: underline;
+}
+
+b {
+  font-weight: bold;
+}
+
+i {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: .1em dashed;
+}
+
+pre {
+  font-family: monospace;
+}
+
+ol {
+  padding: 2em;
+  list-style-type: decimal;
+}
+
+ul {
+  padding: 2em;
+  list-style-type: disc;
+}
+
+mark {
+  background: #F7FF3F;
+}
+
+body {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.titleimg {
+  float: right;
+  padding: 1em;
+}
+
+.projects {
+  list-style-type: none;
+  padding: 1em;
+}
+.projects:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.projects-item {
+  position: relative;
+}
+
+.projects-item {
+  width: 48.27586%;
+  float: left;
+  margin-right: 3.44828%;
+  margin-bottom: 3.44828%;
+}
+.projects-item:nth-child(3n+3) {
+  width: 48.27586%;
+  float: right;
+  margin-right: 0;
+}
+.projects-item .projects-item-content {
+  display: none;
+}
+
+.projects-item:first-child {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 3.44828%;
+}
+@media (min-width: 600px) {
+  .projects-item:first-child img {
+    width: 41.17647%;
+    float: left;
+    margin-right: 2.94118%;
+  }
+  .projects-item:first-child .projects-item-content {
+    width: 55.88235%;
+    float: right;
+    margin-right: 0;
+    display: block;
+  }
+  .projects-item:first-child .projects-item-content p {
+    padding: 0;
+  }
+  .projects-item:first-child .projects-item-header {
+    display: none;
+  }
+}
+
+.projects-item-header {
+  position: absolute;
+  top: 0;
+  padding-left: .5em;
+  padding-top: .3em;
+}
+
+.projects-item-header-first {
+  margin-top: 0;
+  top: 0;
+  left: .2em;
+}
+
+.img-responsive {
+  width: 100%;
+}

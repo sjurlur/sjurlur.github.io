@@ -1,0 +1,40 @@
+---
+layout: default
+title: Portfolio
+---
+
+<section id="infotext">
+	<img src="http://placehold.it/150x150" alt="" class="titleimg">
+        <p>
+          Sjur brenner for webutvikling og brukeropplevelse. Han er opptatt av å levere arbeid med høy kvalitet, og er grundig i sin arbeidsmåte. Han har blant annet erfaring med frontend utvikling med HTML5 og CSS3 kombinert med AngularJS. 
+        </p>
+
+        <p>
+          Sjur har en mastergrad i informatikk: design, bruk, interaksjon fra Universitetet i Oslo. Han har spesialisert seg innenfor programmering og webteknologi, men har alltid fokus på brukerne av teknologien. Han er glad i å jobbe i team, og gjør gjerne interaksjonsdesign i kombinasjon med frontend utvikling. 
+        </p>
+        
+        <!--<img src="{{ site.url }}/assets/sjur.jpg" alt="Bilde av Sjur Seibt" />-->
+</section>
+
+<section id="projects">
+ 	<h1>Prosjekter</h1>
+	<ul class="projects">
+		{% for post in site.posts %}
+		<li class="projects-item">
+			<img src="http://placehold.it/200x200" alt="" class="img-responsive">
+			<h2 class="projects-item-header">{{post.title}}</h2>
+			<div class="projects-item-content">
+				<h2 class="projects-item-header-first">{{post.title}}</h2>
+				<div class="post-content">
+					{{post.excerpt}}
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+  <!--<ul class="projects">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>-->
+</section>
