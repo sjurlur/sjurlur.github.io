@@ -15,6 +15,9 @@ $susy: (
 @import "variables";
 @import "atoms/styleguide";
 
+@mixin gutter{
+	margin: 15px 15px;
+}
 
 @mixin clearfix {
 	&:after {
@@ -46,69 +49,123 @@ body{
 
 .projects-item{
 	position: relative;
-}
 
-.projects-item {
-	
-	@include span(3 of 6);
-	margin-bottom: gutter(6);
-
-	&:nth-child(3n+3){
-		@include span(3 of 6 last);
-	}
-
-	.projects-item-content{
-		display: none;
-	}
-
-}
-
-.projects-item:first-child {
-	@include span(6 of 6); 
-	margin-bottom: gutter(6);
-	
 	@include breakpoint(600px) {
-		img{
-			@include span(3 of 7 first);
-			//display: inline-block;
-		}
-		
-		.projects-item-content{
-			@include span(4 of 7 last);
-			display: block;
-			p{
-				padding: 0;
-			}
-		}
-
-		.projects-item-header{
-			display: none;
+		@include span(1 of 2);
+		&:nth-child(3), &:nth-child(2n+5){
+			@include last;
 		}
 	}
-		
+
+	p{
+		padding: 0 0 0 .5em;
+	}
 
 }
+
 
 .projects-item-header{
 	@extend h3;
 	position: absolute;
 	top: 0;
-	//line-height: 0;
-	padding-left: .5em;
-	padding-top: .3em;
+	padding: .5em .5em;
+	margin-top: 0;
+	width: 100%;
+	background: rgba(255,255,255,0.9);
+
+	small{
+		font-size: .7em;
+		font-weight: 300;
+		display: block;
+	}
 }
 
-.projects-item-header-first{
-	margin-top: 0;
-	//line-height: 1em;
-	top: 0;
-	left: .2em;
+.projects-item:first-child {
+
+	@include breakpoint(600px) {
+		padding-bottom: gutter(2);
+
+		@include span(2 of 2);
+		img{
+			@include span (3 of 7 last);
+		}
+		.post-content{
+			@include span(4 of 7);
+		}
+
+		.projects-item-header{
+			background: inherit;
+			@include span(4 of 7);
+			position: relative;
+			margin: 0;
+			padding: 0;
+		}
+
+		p{
+			padding: 0;
+		}
+
+	}
+
+}
+.meta{
+	padding: 0.5em 1em;
+}
+.meta-period, .meta-technology {
+	display: block;
 }
 
 .img-responsive{
 	width: 100%;
 }
 
+.post-img{
+	@include breakpoint(600px){
+		@include span(3 of 6 last);
+		padding: 1em;
+	}
+}
+
+.gallery{
+	padding-top: 1em;
+}
+.gallery-img{
+	@include breakpoint(600px){
+		padding: .2em;
+		background: $color-orange;
+		box-shadow: .8em .8em rgba(0,0,0,0.9);
+		&:hover{
+			transform: scale(1.01);
+			transition: 0.2s;
+		}
+	}
+}
+
+.gallery.gallery-3{
+
+	@include clearfix;
+	@include breakpoint(600px){
+		img{
+			@include span(1 of 3);
+		}
+		img:last-child{
+			@include last;
+		}
+	}
+	
+}
+
+.gallery-2{
+	@include clearfix;
+	@include breakpoint(600px){
+		img{
+			@include span(1 of 2);
+		}
+		img:last-of-type{
+			@include last;
+		}
+	}
+}
 
 footer{
 	//@include span(6);

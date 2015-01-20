@@ -3,7 +3,10 @@ layout: default
 ---
 <article>
 	<h2>{{ page.title }}</h2>
-	<p class="meta">{{page.dateFrom}} - {{page.dateTo}}</p>
+	<div class="meta">
+		<span class="meta-period">Periode: {{page.dateFrom}} - {{page.dateTo}}</span>
+		<span class="meta-technology">Teknologi: <i>{{page.technology}}</i></span>
+	</div>
 	<div class="post">
 		{{ content }}
 	</div>
