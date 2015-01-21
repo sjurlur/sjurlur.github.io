@@ -1,0 +1,108 @@
+---
+layout: project
+title:  "Monoplant.me"
+company: "UiO"
+dateFrom: August 2013
+dateTo: Mai 2014
+coverimage: 2014-05-01-monoplant.me/1.PNG
+technology: HTML5, CSS3, Javascript, API i Ruby on rails, Amazon EC2
+---
+<p>
+	<i>Dette er en kort beskrivelse av det avsluttende masterprosjektet ved institutt for informatikk på Universitetet i Oslo. Det ble skrevet i samarbeid med Morten Kjelling, og den kan lastes ned i sin helhet her: <a href="{{site.url}}/assets/2014-05-01-monoplant.me/Kjelling, Seibt (2014) - master.pdf">Kjelling, Seibt (2014)</a></i>
+</p>
+
+
+<p>
+	Planter lever sakte, de gror sakte og beveger seg sakte, så sakte at mennesker ikke kan se når det
+	skjer. Vi kan se at en plante har blitt større, at den har fått knopper eller at den har visnet, men
+	for å kunne se den faktiske blomstringen akkurat når den skjer, må man enten ha en tålmodighet
+	uten sidestykke, forandre plantens gener slik at den vokse raskere, eller ta ibruk hjelpemidler
+	som kan observere dette for oss.
+</p>
+
+<!--more-->
+<a href="#img5">
+	<img src="{{site.url}}/assets/2014-05-01-monoplant.me/1.PNG" alt="Skjermdump av forsiden på monoplant.me" class="img-responsive post-img">
+</a>
+
+<p>
+	Et vanlig videokamera tar 30 bilder i sekundet, og når du spiller av videoen vises bildene etter hverandre i en hastighet på 30 bilder i sekundet. Det gjør at vi kan se på videoen og oppleve det som skjer på videoen i akkurat samme hastighet som det var i virkeligheten. Monoplant tar bilde av en plante en gang i minuttet, og når man spiller av videoen gjøres dette i en hastighet på 15 bilder i sekundet, noe som gjør at man vil kunne se endringer som skjer over mange timer i virkeligheten, på bare noen sekunder i videoen.
+</p>
+
+<p>
+	Samtidig som Monoplant tar bilde av planten leses det av temperatur, lysnivå, luftfuktighet og jordfuktighet i potten. Dette gjør at vi kan se på utviklingen av disse verdiene over tid, og når dette kombineres med videoen av planten kan man se hvordan planten reagerer på endringer i variablene. For eksempel vil de fleste planter begynne å henge med bladene etter hvert som jorda tørker ut, og reise dem igjen når de blir vannet.
+</p>
+
+<p>
+	Variablene presenteres i en graf som utvikler seg dynamisk samtidig som videoen spilles av. Det vil si at hvert bilde i videoen har ett korresponderende punkt i grafen som viser miljøvariablene. Dermed er det mulig å analysere hvilke fysiske forhold planten reagerer på og hvordan den reagerer.
+</p>
+
+<h3>Teknisk beskrivelse</h3>
+
+<a href="#img4">
+	<img src="{{site.url}}/assets/2014-05-01-monoplant.me/4.PNG" alt="Illustrasjon av hardware komponenter og planten. Luftfuktighet, jordtemperatur, jordfuktighet, og lyssensor er koblet til planten, som videre er koblet til en Arduino. Arduinoen kommuniserer med en raspberry pi som tar bilde av planten, pakker alt sammen og sender det til API" class="img-responsive post-img">
+</a>
+
+<p>
+	Systemet er satt sammen av tre ulike deler:
+	<ol>
+		<li>Ett hardware system med sensorer som samler inn data om planten og miljøet. Dette er satt sammen av en raspberry pi, webkamera, Arduino, med wifi tilkobling</li>
+		<li>Ett API skrevet i ruby on rails. Hostet på Amazon EC2 instanser som også konverterer timelapse bilder til video en gang i døgnet</li>
+		<li>Ett webgrensesnitt som presenterer dataene</li>
+	</ol>
+</p>
+
+<p>
+	Webgrensesnittet ble skrevet i Ruby on Rails som webapp rammeverk, Twitter bootstrap som design rammeverk, og <a href="http://www.highcharts.com/">highcharts</a> som graferammeverk. Hovedsiden viser live data fra planten (temperatur, lys, luftfuktighet, jordtemperatur og bilde). I tillegg vises en timelapse video fra det siste døgnet. Videoen har en korresponderende graf under seg som utvikler seg mens videoen spilles av. Dermed er det mulig å følge sensorvariablenes utvikling over tid samtidig som en kan se hvordan planten reagerte fysisk på variabelendringene. 
+</p>
+<h3>Galleri</h3>
+<div class="gallery gallery-3">
+	<a href="#img1">
+		<img src="{{site.url}}/assets/2014-05-01-monoplant.me/2.PNG" alt="Graf over luftfuktighet i plantens miljø over tid" class="img-responsive gallery-img">
+	</a>
+	<a href="#img2">
+		<img src="{{site.url}}/assets/2014-05-01-monoplant.me/3.PNG" alt="Graf over miljøvariabler sammen med video av plante" class="img-responsive gallery-img">
+	</a>
+	<a href="#img3">
+		<img src="{{site.url}}/assets/2014-05-01-monoplant.me/windowsystem.jpg" alt="Fotografi av plante med sensorer koblet til seg" class="img-responsive gallery-img">
+	</a>
+</div>
+
+
+<div class="lightbox" id="img1">
+	<a href="#_" class="button button-close"></a>
+	<a href="#_">
+  		<img src="{{site.url}}/assets/2014-05-01-monoplant.me/2.PNG" alt="Graf over luftfuktighet i plantens miljø over tid">
+  	</a>
+</div>
+
+
+<div class="lightbox" id="img2">
+	<a href="#_" class="button button-close"></a>
+	<a href="#_">
+  		<img src="{{site.url}}/assets/2014-05-01-monoplant.me/3.PNG" alt="Graf over miljøvariabler sammen med video av plante">
+  	</a>
+</div>
+
+<div class="lightbox" id="img3">
+	<a href="#_" class="button button-close"></a>
+	<a href="#_">
+  		<img src="{{site.url}}/assets/2014-05-01-monoplant.me/windowsystem.jpg" alt="Fotografi av plante med sensorer koblet til seg">
+  	</a>
+</div>
+
+<div class="lightbox" id="img4">
+	<a href="#_" class="button button-close"></a>
+	<a href="#_">
+		<img src="{{site.url}}/assets/2014-05-01-monoplant.me/4.PNG" alt="Illustrasjon av hardware komponenter og planten. Luftfuktighet, jordtemperatur, jordfuktighet, og lyssensor er koblet til planten, som videre er koblet til en Arduino. Arduinoen kommuniserer med en raspberry pi som tar bilde av planten, pakker alt sammen og sender det til API">
+	</a>
+</div>
+
+<div class="lightbox" id="img5">
+	<a href="#_" class="button button-close"></a>
+	<a href="#_">
+		<img src="{{site.url}}/assets/2014-05-01-monoplant.me/1.PNG" alt="Skjermdump av forsiden på monoplant.me">
+	</a>
+</div>
+
+

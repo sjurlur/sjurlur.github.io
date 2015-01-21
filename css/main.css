@@ -79,7 +79,7 @@ pre {
 }
 
 ol {
-  padding: 2em;
+  padding: 0em 2em;
   list-style-type: decimal;
 }
 
@@ -124,12 +124,14 @@ body:after {
 
 .projects-item {
   position: relative;
+  padding-bottom: 11.11111%;
 }
 @media (min-width: 600px) {
   .projects-item {
     width: 44.44444%;
     float: left;
     margin-right: 11.11111%;
+    padding-bottom: 5.26316%;
   }
   .projects-item:nth-child(3), .projects-item:nth-child(2n+5) {
     float: right;
@@ -225,18 +227,18 @@ body:after {
   }
 }
 
-.gallery.gallery-3:after {
+.gallery-3:after {
   content: "";
   display: table;
   clear: both;
 }
 @media (min-width: 600px) {
-  .gallery.gallery-3 img {
+  .gallery-3 a {
     width: 28.57143%;
     float: left;
     margin-right: 7.14286%;
   }
-  .gallery.gallery-3 img:last-child {
+  .gallery-3 a:last-child {
     float: right;
     margin-right: 0;
   }
@@ -257,4 +259,86 @@ body:after {
     float: right;
     margin-right: 0;
   }
+}
+
+.lightbox {
+  position: fixed;
+  top: -100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  overflow: hidden;
+}
+
+.lightbox img {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 0%;
+  max-width: 0%;
+  border: 3px solid white;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  transition: .3s ease-in-out;
+}
+
+.lightbox:target {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.lightbox:target .button-close {
+  top: 0;
+}
+
+.lightbox:target img {
+  max-height: 90%;
+  max-width: 90%;
+}
+
+.button-close {
+  background: #fff;
+  position: absolute;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  top: -80px;
+  transition: .5s ease-in-out;
+  z-index: 1;
+}
+.button-close:hover:before {
+  -webkit-transform: rotate(135deg) scale(0.9);
+      -ms-transform: rotate(135deg) scale(0.9);
+          transform: rotate(135deg) scale(0.9);
+}
+.button-close:hover:after {
+  -webkit-transform: rotate(45deg) scale(0.9);
+      -ms-transform: rotate(45deg) scale(0.9);
+          transform: rotate(45deg) scale(0.9);
+}
+.button-close:before, .button-close:after {
+  content: "";
+  background: #000;
+  display: block;
+  height: 30px;
+  width: 4px;
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  border-radius: 20px;
+  transition: .2s;
+}
+.button-close:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.button-close:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }

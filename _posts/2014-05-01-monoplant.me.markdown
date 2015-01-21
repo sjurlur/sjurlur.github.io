@@ -1,7 +1,0 @@
----
-layout: project
-title:  "Monoplant.me"
-dateFrom: August 2013
-dateTo: Mai 2014
----
-hei
