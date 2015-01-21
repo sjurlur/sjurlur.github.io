@@ -107,6 +107,55 @@ body:after {
   clear: both;
 }
 
+.title:hover .title-arrow {
+  transition: opacity .5s, -webkit-transform .2s;
+  transition: opacity .5s, transform .2s;
+  opacity: 1;
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.title-arrow {
+  opacity: 0;
+  top: -15px;
+  left: 15px;
+  display: inline-block;
+  width: 40px;
+  height: 5px;
+  border-radius: 10px;
+  background: #FF5108;
+  position: relative;
+}
+.title-arrow:before, .title-arrow:after {
+  border-radius: 10px;
+  display: block;
+  content: "";
+  background: #FF5108;
+  position: absolute;
+  width: 25px;
+  height: 5px;
+  right: -3px;
+}
+.title-arrow:before {
+  -webkit-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+          transform: rotate(35deg);
+  -webkit-transform-origin: 0%, 0%;
+      -ms-transform-origin: 0%, 0%;
+          transform-origin: 0%, 0%;
+  top: -6px;
+}
+.title-arrow:after {
+  -webkit-transform: rotate(-35deg);
+      -ms-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+  -webkit-transform-origin: 0%, 100%;
+      -ms-transform-origin: 0%, 100%;
+          transform-origin: 0%, 100%;
+  top: 6px;
+}
+
 .titleimg {
   float: right;
   padding: 1em;
