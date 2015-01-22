@@ -172,6 +172,7 @@ body{
 	padding-top: 1em;
 }
 .gallery-img{
+	padding-bottom: 2em;
 	@include breakpoint(600px){
 		padding: .2em;
 		background: $color-orange;

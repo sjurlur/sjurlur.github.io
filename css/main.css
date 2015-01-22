@@ -262,6 +262,9 @@ body:after {
   padding-top: 1em;
 }
 
+.gallery-img {
+  padding-bottom: 2em;
+}
 @media (min-width: 600px) {
   .gallery-img {
     padding: .2em;
