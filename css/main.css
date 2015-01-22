@@ -394,3 +394,44 @@ body:after {
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+
+.button-top {
+  background: #FF2321;
+  position: absolute;
+  right: 15px;
+  margin-top: 30px;
+  height: 45px;
+  width: 50px;
+  border-radius: 2px;
+}
+.button-top:before, .button-top:after {
+  content: "";
+  height: 22px;
+  width: 4px;
+  background: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 12px;
+}
+.button-top:before {
+  -webkit-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+          transform: rotate(35deg);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+  left: 24px;
+}
+.button-top:after {
+  -webkit-transform: rotate(-35deg);
+      -ms-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+  left: 22px;
+}
+.button-top:hover:before, .button-top:hover:after {
+  top: 10px;
+  transition: .5s;
+}

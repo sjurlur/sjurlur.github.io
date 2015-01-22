@@ -295,3 +295,44 @@ body{
 footer{
 	//@include span(6);
 }
+
+
+.button-top{
+	background: $color-red;
+	position: absolute;
+	right: 15px;
+	margin-top: 30px;
+	height: 45px;
+	width: 50px;
+	border-radius: 2px;
+
+	&:before, &:after{
+		content: "";
+		height: 22px;
+		width: 4px;
+		background: #fff;
+		border-radius: 20px;
+		//display: block;
+		position: absolute;
+		top: 12px;
+	}
+
+	&:before{
+		transform: rotate(35deg);
+		transform-origin: top;
+		left: 24px;
+	}
+	&:after{
+		transform: rotate(-35deg);
+		transform-origin: top;
+		left: 22px;
+	}
+
+	&:hover{
+		&:before, &:after {
+			top: 10px;
+			transition: .5s;
+		}
+	}
+
+}
