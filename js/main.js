@@ -1,3 +1,5 @@
+
+//Back to top.js
 jQuery(document).ready(function($){
 	// browser window scroll (in pixels) after which the "back to top" link is shown
 	var offset = 300,
@@ -25,4 +27,11 @@ jQuery(document).ready(function($){
 		);
 	});
 
+});
+
+//preventdefault.js
+$("a[href^=#]").on("click", function(e) {
+  e.preventDefault();
+  // Basically the same as doing nothing except we bypass a history entry.
+  location.replace( '#' + this.href.substr( this.href.lastIndexOf( '#' ) + 1 ) );
 });
